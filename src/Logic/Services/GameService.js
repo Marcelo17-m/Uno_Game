@@ -1,15 +1,17 @@
 import gameRepository from '../../Data Access/Repositories/GameRepository.js';
 import { AppError } from '../../Middleware/errorHandler.js';
 
+const VALID_STATUSES = ['waiting', 'active', 'finished'];
+
 const createGame = async ({title, status, maxPlayers}) => {
     if (!title) {
         throw new AppError('title is mandatory', 400);
     }
     if (!VALID_STATUSES.includes(status)) {
-        throw new AppError(`status debe ser uno de: ${VALID_STATUSES.join(', ')}`, 400);
+        throw new AppError(`status has to be one of: ${VALID_STATUSES.join(', ')}`, 400);
     }
     if (maxPlayers < 2) {
-        throw new AppError('maxPlayers debe ser al menos 2', 400);
+        throw new AppError('maxPlayers has to be atleast 2', 400);
     }
     return gameRepository.create({ title, status, maxPlayers });
 };

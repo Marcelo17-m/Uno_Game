@@ -3,8 +3,8 @@ import gameRepository from '../../Data Access/Repositories/GameRepository.js';
 import { AppError } from '../../Middleware/errorHandler.js';
 
 const createCard = async ({color, value, gameId}) => {
-    if (!title || !value || !gameId) {
-        throw new AppError('title, value and GameId are mandatory', 400);
+    if (!color || !value || !gameId) {
+        throw new AppError('color, value and GameId are mandatory', 400);
     }
 
     const game = await gameRepository.findById(gameId);
@@ -28,7 +28,7 @@ const getCardById = async (id) => {
 const updateCard = async (id, data) => {
     const card = await cardRepository.update(id, data);
     if (!card) throw new AppError('Card not found', 404);
-    return card;
+    return card; //future update manage error when calling for an unexisting gameId
 };
 
 const deleteCard = async (id) => {
