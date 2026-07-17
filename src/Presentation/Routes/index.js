@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import playerRoutes from './PlayerRoutes';
-import gameRoutes from './GameRoutes';
-import scoreRoutes from './ScoreRoutes';
-import cardRoutes from './CardRoutes';
+import playerRoutes from './PlayerRoutes.js';
+import gameRoutes from './GameRoutes.js';
+import scoreRoutes from './ScoreRoutes.js';
+import cardRoutes from './CardRoutes.js';
 
 const router = Router();
 
