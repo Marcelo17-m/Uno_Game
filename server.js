@@ -10,7 +10,7 @@ async function startServer() {
 
         //this successfully creates or updates the table based
         // on the model.
-        await sequelize.sync({ alter: true});
+        await sequelize.sync({ alter: true}); //force: true to reset everything to cero
         console.log('Sync models correctly');
 
         app.listen(PORT, () =>{

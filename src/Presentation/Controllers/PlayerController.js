@@ -12,7 +12,7 @@ class PlayerController {
 
     async getAll(req, res, next){
         try {
-            const player = await playerService.getAllPlayers();
+            const players = await playerService.getAllPlayers();
             res.json(players);
         } catch (err){
             next(err);
