@@ -15,7 +15,7 @@ class CardRepository {
 
     async update(id, data) {
         const card = await Card.findByPk(id);
-        if(card){
+        if(!card){
             return null;
         }
         return card.update(data);

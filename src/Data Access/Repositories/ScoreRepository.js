@@ -15,7 +15,7 @@ class ScoreRepository {
 
     async update(id, data) {
         const score = await Score.findByPk(id);
-        if(score){
+        if(!score){
             return null;
         }
         return score.update(data);
