@@ -1,4 +1,4 @@
-import Card from '../Models/Card.js';
+import { Card } from '../Models/index.js';
 
 class CardRepository {
     async create(data) {

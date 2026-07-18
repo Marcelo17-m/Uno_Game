@@ -1,4 +1,4 @@
-import Game from '../Models/Game.js';
+import { Game } from '../Models/index.js';
 
 class GameRepository {
     async create(data) {

@@ -1,4 +1,4 @@
-import Score from '../Models/Score.js';
+import { Score } from '../Models/index.js';
 
 class ScoreRepository {
     async create(data) {
